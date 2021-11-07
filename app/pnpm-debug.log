@@ -1,0 +1,68 @@
+---
+  0 debug pnpm:scope: 
+    selected: 1
+    workspacePrefix: null
+  1 info pnpm: 
+    message: "A store server is running. All store manipulations are delegated to it."
+    prefix: "/app"
+  2 debug pnpm:package-json: 
+    initial: 
+      //1: "describes your app and its dependencies"
+      //2: "https://docs.npmjs.com/files/package.json"
+      //3: "updating this file will download and update your packages"
+      name: "hello-express"
+      version: "0.0.1"
+      description: "A simple Node app built on Express, instantly up and running."
+      main: "server.js"
+      scripts: 
+        start: "node server.js"
+      dependencies: 
+        body-parser: "^1.19.0"
+        discord-whook.js: "0.0.5"
+        discord.hook: "^2.0.1"
+        discord.js: "^12.2.0"
+        express: "^4.17.1"
+        hookcord: "^2.0.2"
+        webcord: "^2.1.4"
+        webhook-discord: "^3.6.0"
+      engines: 
+        node: "11.x"
+      repository: 
+        url: "https://glitch.com/edit/#!/hello-express"
+      license: "MIT"
+      keywords: 
+        - "node"
+        - "glitch"
+        - "express"
+      readme: "Modernapp!\n=================\n\nModernapp is a new fully-fledge application center handler built for roblox.\n\nLearn more at [modernapp](https://modernapp.gq/)."
+      readmeFilename: "README.md"
+      gitHead: "8e06f069b9f097e55ede05b79271eba66d0035ee"
+      _id: "hello-express@0.0.1"
+    prefix: "/app"
+  3 debug pnpm:stage: 
+    prefix: "/app"
+    stage: "resolution_started"
+  4 warn pnpm:install-check: 
+    message: "Unsupported engine for registry.npmjs.org/discord.js/12.3.1: wanted: {\"node\":\">=12.0.0\"} (current: {\"node\":\"v11.14.0\",\"pnpm\":\"2.25.5\"})"
+    prefix: "/app"
+  5 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/discord.js/12.3.1"
+    requester: "/app"
+    status: "resolved"
+  6 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/body-parser/1.19.0"
+    requester: "/app"
+    status: "resolved"
+  7 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/express/4.17.1"
+    requester: "/app"
+    status: "resolved"
+  8 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/discord.js/12.3.1"
+    requester: "/app"
+    status: "found_in_store"
+  9 error pnpm: "Cannot read property 'latest' of undefined"
+  10 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/body-parser/1.19.0"
+    requester: "/app"
+    status: "found_in_store"

@@ -1,0 +1,303 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  </head>
+  <body style="background-color: #ff4652; color: white; position: relative; min-height: 100vh;">
+    <div class="jumbotron jumbotron-fluid" style="background-color: #1b2a35; color: white;">
+      <div class="container">
+        <h1>modernapp | canary</h1>
+        <p>Configuring applications...</p>
+      </div>
+    </div>
+    <div class="container" style="padding-bottom: 2.5rem;">
+      <h2>Colors and detailing:</h2>
+      <p>Change the colors of your application center!</p>
+        <input style="display: block; margin: 4.5px; width: 45%;" type="text" class="form-control" id="maincolor" value="255,70,82" placeholder="Primary Color in RGB format (E.g: 255,70,82)" name="maincolor"/>
+        <input style="display: block; margin: 4.5px; width: 45%;" type="text" class="form-control" id="secondcolor" value="27,42,53" placeholder="Secondary Color in RGB format (E.g: 27,42,53)" name="secondcolor"/>
+        <br/>
+        <br/>
+      <h2>Webhook URL</h2>
+      <p>
+        In order to get this, go to a discord server, click the server name in the top left, click "Server Settings", click "Webhooks", then click "Create Webhook". Select the channel you want the webhook to post applications in and copy the Webhook Url.
+      </p>
+        <input style="display: block; margin: 4.5px; width: 45%;" type="text" class="form-control" id="hook" placeholder="Webhook URL (E.g: https://discordapp.com/api/webhooks/id/token)" name="hook"/>
+        <br/>
+        <br/>
+      <h2>Name the application:</h2>
+      <p>
+        Name the first application in your application center!
+      </p>
+        <input style="display: block; margin: 4.5px; width: 45%;" type="text" class="form-control" id="name" placeholder="Name this application (E.g: Level 1)" name="name"/>
+        <br/>
+        <br/>
+        <h2>Questions:</h2>
+        <p>
+          Add questions to your application!
+        </p>
+      <!--APPLICATION 1 -->
+      <input style="display: block; margin: 4.5px;" type="text" class="form-control" id="q1" placeholder="Question 1" name="q1"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q2" placeholder="Question 2" name="q2"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q3" placeholder="Question 3" name="q3"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q4" placeholder="Question 4" name="q4"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q5" placeholder="Question 5" name="q5"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q6" placeholder="Question 6" name="q6"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q7" placeholder="Question 7" name="q7"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q8" placeholder="Question 8" name="q8"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q9" placeholder="Question 9" name="q9"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q10" placeholder="Question 10" name="q10"/>
+      <button onclick="add()" class="btn" style="background-color: #1b2a35; color: white; margin: 4.5px;">Add Question</button>
+      <hr/>
+      <!--APPLICATION 2 -->
+      <div id="app2stuff" style="display: none;">
+      <h2 style="display: block;" id="app2info">Second Application Details:</h2>
+      <p style="display: block;" id="app2infob">
+        Configure the second application.
+      </p>
+      <input style="display: block; margin: 4.5px; width: 45%;" type="text" class="form-control" id="name2" placeholder="Name the second application (E.g: Level 2)" name="name2"/>
+      <input style="display: block; margin: 4.5px; width: 45%;" type="text" class="form-control" id="hook2" placeholder="Webhook URL (E.g: https://discordapp.com/api/webhooks/id/token)" name="hook"/>
+      <input style="display: block; margin: 4.5px;" type="text" class="form-control" id="q1b" placeholder="Question 1" name="q1b"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q2b" placeholder="Question 2" name="q2b"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q3b" placeholder="Question 3" name="q3b"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q4b" placeholder="Question 4" name="q4b"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q5b" placeholder="Question 5" name="q5b"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q6b" placeholder="Question 6" name="q6b"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q7b" placeholder="Question 7" name="q7b"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q8b" placeholder="Question 8" name="q8b"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q9b" placeholder="Question 9" name="q9b"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q10b" placeholder="Question 10" name="q10b"/>
+      <button onclick="add2()" class="btn" style="display: block; background-color: #1b2a35; color: white; margin: 5px;" id="next2">Add Question</button>
+      <hr style="display: block;" id="app2hr"/>         
+      </div>
+      <!--APPLICATION 3 -->
+      <div id="app3stuff" style="display: none;">
+      <h2 style="display: block;" id="app3info">Third Application Details:</h2>
+      <p style="display: block;" id="app3infob">
+        Configure the third application.
+      </p>
+      <input style="display: block; margin: 4.5px; width: 45%;" type="text" class="form-control" id="name3" placeholder="Name the second application (E.g: Level 3)" name="name2"/>
+      <input style="display: block; margin: 4.5px; width: 45%;" type="text" class="form-control" id="hook3" placeholder="Webhook URL (E.g: https://discordapp.com/api/webhooks/id/token)" name="hook"/>
+      <input style="display: block; margin: 4.5px;" type="text" class="form-control" id="q1c" placeholder="Question 1" name="q1c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q2c" placeholder="Question 2" name="q2c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q3c" placeholder="Question 3" name="q3c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q4c" placeholder="Question 4" name="q4c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q5c" placeholder="Question 5" name="q5c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q6c" placeholder="Question 6" name="q6c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q7c" placeholder="Question 7" name="q7c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q8c" placeholder="Question 8" name="q8c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q9c" placeholder="Question 9" name="q9c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q10c" placeholder="Question 10" name="q10c"/>
+      <button onclick="add3()" class="btn" style="display: block; background-color: #1b2a35; color: white; margin: 5px;" id="next3">Add Question</button>
+      <hr style="display: block;" id="app3hr"/>         
+      </div>
+      <!--APPLICATION 4 -->
+      <div id="app4stuff" style="display: none;">
+      <h2 style="display: block;" id="app4info">Fourth Application Details:</h2>
+      <p style="display: block;" id="app4infob">
+        Configure the fourth application.
+      </p>
+      <input style="display: block; margin: 4.5px; width: 45%;" type="text" class="form-control" id="name4" placeholder="Name the second application (E.g: Level 4)" name="name4"/>
+      <input style="display: block; margin: 4.5px; width: 45%;" type="text" class="form-control" id="hook4" placeholder="Webhook URL (E.g: https://discordapp.com/api/webhooks/id/token)" name="hook"/>
+      <input style="display: block; margin: 4.5px;" type="text" class="form-control" id="q1d" placeholder="Question 1" name="q1c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q2d" placeholder="Question 2" name="q2c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q3d" placeholder="Question 3" name="q3c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q4d" placeholder="Question 4" name="q4c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q5d" placeholder="Question 5" name="q5c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q6d" placeholder="Question 6" name="q6c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q7d" placeholder="Question 7" name="q7c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q8d" placeholder="Question 8" name="q8c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q9d" placeholder="Question 9" name="q9c"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q10d" placeholder="Question 10" name="q10c"/>
+      <button onclick="add4()" class="btn" style="display: block; background-color: #1b2a35; color: white; margin: 5px;" id="next4">Add Question</button>
+      <hr style="display: block;" id="app4hr"/>         
+      </div>
+      
+      <!--APPLICATION 5 -->
+      <div id="app5stuff" style="display: none;">
+      <h2 style="display: block;" id="app5info">Fifth Application Details:</h2>
+      <p style="display: block;" id="app5infob">
+        Configure the fifth application.
+      </p>
+      <input style="display: block; margin: 4.5px; width: 45%;" type="text" class="form-control" id="name5" placeholder="Name the second application (E.g: Level 5)" name="name5"/>
+      <input style="display: block; margin: 4.5px; width: 45%;" type="text" class="form-control" id="hook5" placeholder="Webhook URL (E.g: https://discordapp.com/api/webhooks/id/token)" name="hook"/>
+      <input style="display: block; margin: 4.5px;" type="text" class="form-control" id="q1e" placeholder="Question 1" name="q1e"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q2e" placeholder="Question 2" name="q2e"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q3e" placeholder="Question 3" name="q3e"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q4e" placeholder="Question 4" name="q4e"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q5e" placeholder="Question 5" name="q5e"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q6e" placeholder="Question 6" name="q6e"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q7e" placeholder="Question 7" name="q7e"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q8e" placeholder="Question 8" name="q8e"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q9e" placeholder="Question 9" name="q9e"/>
+      <input style="display: none; margin: 4.5px;" type="text" class="form-control" id="q10e" placeholder="Question 10" name="q10e"/>
+      <button onclick="add5()" class="btn" style="display: block; background-color: #1b2a35; color: white; margin: 5px;" id="next5">Add Question</button>
+      <hr style="display: block;" id="app5hr"/>         
+      </div>
+      
+      <button style="display: block; background-color: #1b2a35; color: white;" onclick="submit()" type="name" class="btn" id="next">Next!</button>
+      
+    
+    <script>
+      var questionNum = 1;
+      var questionNum2 = 1;
+      var questionNum3 = 1;
+      var questionNum4 = 1;
+      var questionNum5 = 1;
+      
+      function add() {
+        if (questionNum == 10) {
+        console.log("Too many questions.");
+        } else {
+          questionNum = questionNum+1;
+          console.log(questionNum);
+          document.getElementById("q"+questionNum).style.display = "block";
+        }
+      };
+      
+      function add2() {
+        if (questionNum2 == 10) {
+        console.log("Too many questions.");
+        } else {
+          questionNum2 = questionNum2+1;
+          console.log(questionNum2);
+          document.getElementById("q"+questionNum2+"b").style.display = "block";
+        }
+      };
+      
+      function add3() {
+        if (questionNum3 == 10) {
+        console.log("Too many questions.");
+        } else {
+          questionNum3 = questionNum3+1;
+          console.log(questionNum3);
+          document.getElementById("q"+questionNum3+"c").style.display = "block";
+        }
+      };
+      
+      function add4() {
+        if (questionNum4 == 10) {
+        console.log("Too many questions.");
+        } else {
+          questionNum4 = questionNum4+1;
+          console.log(questionNum4);
+          document.getElementById("q"+questionNum4+"d").style.display = "block";
+        }
+      };
+      
+      function add5() {
+        if (questionNum5 == 10) {
+        console.log("Too many questions.");
+        } else {
+          questionNum5 = questionNum5+1;
+          console.log(questionNum5);
+          document.getElementById("q"+questionNum5+"e").style.display = "block";
+        }
+      };
+      
+      const params = new URLSearchParams(window.location.search);
+      
+      var name = params.get("title")
+      var apps = params.get("apps")
+      
+      
+      if (apps == "2") {
+          document.getElementById("app2stuff").style.display = "block";
+        } else if (apps == "3") {
+          document.getElementById("app2stuff").style.display = "block";
+          document.getElementById("app3stuff").style.display = "block";
+        } else if (apps == "4") {
+          document.getElementById("app2stuff").style.display = "block";
+          document.getElementById("app3stuff").style.display = "block";
+          document.getElementById("app4stuff").style.display = "block";
+        } else if (apps == "5") {
+          document.getElementById("app2stuff").style.display = "block";
+          document.getElementById("app3stuff").style.display = "block";
+          document.getElementById("app4stuff").style.display = "block";
+          document.getElementById("app5stuff").style.display = "block";
+        }
+      
+      function submit() {
+        var appName = document.getElementById('name').value;
+
+        var q1 = document.getElementById('q1').value;
+        var q2 = document.getElementById('q2').value;
+        var q3 = document.getElementById('q3').value;
+        var q4 = document.getElementById('q4').value;
+        var q5 = document.getElementById('q5').value;
+        var q6 = document.getElementById('q6').value;
+        var q7 = document.getElementById('q7').value;
+        var q8 = document.getElementById('q8').value;
+        var q9 = document.getElementById('q9').value;
+        var q10 = document.getElementById('q10').value;
+        var hook = document.getElementById('hook').value;
+        //--App2--//
+        var appName2 = document.getElementById('name2').value;
+
+        var q1b = document.getElementById('q1b').value;
+        var q2b = document.getElementById('q2b').value;
+        var q3b = document.getElementById('q3b').value;
+        var q4b = document.getElementById('q4b').value;
+        var q5b = document.getElementById('q5b').value;
+        var q6b = document.getElementById('q6b').value;
+        var q7b = document.getElementById('q7b').value;
+        var q8b = document.getElementById('q8b').value;
+        var q9b = document.getElementById('q9b').value;
+        var q10b = document.getElementById('q10b').value;
+        var hook2 = document.getElementById('hook2').value;
+        //--App3--//
+        var appName3 = document.getElementById('name3').value;
+
+        var q1c = document.getElementById('q1c').value;
+        var q2c = document.getElementById('q2c').value;
+        var q3c = document.getElementById('q3c').value;
+        var q4c = document.getElementById('q4c').value;
+        var q5c = document.getElementById('q5c').value;
+        var q6c = document.getElementById('q6c').value;
+        var q7c = document.getElementById('q7c').value;
+        var q8c = document.getElementById('q8c').value;
+        var q9c = document.getElementById('q9c').value;
+        var q10c = document.getElementById('q10c').value;
+        var hook3 = document.getElementById('hook3').value;
+        //--App4--//
+        var appName4 = document.getElementById('name4').value;
+
+        var q1d = document.getElementById('q1d').value;
+        var q2d = document.getElementById('q2d').value;
+        var q3d = document.getElementById('q3d').value;
+        var q4d = document.getElementById('q4d').value;
+        var q5d = document.getElementById('q5d').value;
+        var q6d = document.getElementById('q6d').value;
+        var q7d = document.getElementById('q7d').value;
+        var q8d = document.getElementById('q8d').value;
+        var q9d = document.getElementById('q9d').value;
+        var q10d = document.getElementById('q10d').value;
+        var hook4 = document.getElementById('hook4').value;
+        //--App5--//
+        var appName5 = document.getElementById('name5').value;
+
+        var q1e = document.getElementById('q1e').value;
+        var q2e = document.getElementById('q2e').value;
+        var q3e = document.getElementById('q3e').value;
+        var q4e = document.getElementById('q4e').value;
+        var q5e = document.getElementById('q5e').value;
+        var q6e = document.getElementById('q6e').value;
+        var q7e = document.getElementById('q7e').value;
+        var q8e = document.getElementById('q8e').value;
+        var q9e = document.getElementById('q9e').value;
+        var q10e = document.getElementById('q10e').value;
+        var hook5 = document.getElementById('hook5').value;
+        //--Colors--//
+        var mainColor = document.getElementById('maincolor').value;
+        var secondColor = document.getElementById('secondcolor').value;
+        console.log(hook2)
+        window.location.href = "https://modernapp-canary.glitch.me/build?name="+name+"&apps="+apps+"&appName="+appName+"&q1="+q1+"&q2="+q2+"&q3="+q3+"&q4="+q4+"&q5="+q5+"&q6="+q6+"&q7="+q7+"&q8="+q8+"&q9="+q9+"&q10="+q10+"&maincolor="+mainColor+"&seccolor="+secondColor+"&hook="+hook+"&q1b="+q1b+"&q2b="+q2b+"&q3b="+q3b+"&q4b="+q4b+"&q5b="+q5b+"&q6b="+q6b+"&q7b="+q7b+"&q8b="+q8b+"&q9b="+q9b+"&q10b="+q10b+"&q1c="+q1c+"&q2c="+q2c+"&q3c="+q3c+"&q4c="+q4c+"&q5c="+q5c+"&q6c="+q6c+"&q7c="+q7c+"&q8c="+q8c+"&q9c="+q9c+"&q10c="+q10c+"&q1d="+q1d+"&q2d="+q2d+"&q3d="+q3d+"&q4d="+q4d+"&q5d="+q5d+"&q6d="+q6d+"&q7d="+q7d+"&q8d="+q8d+"&q9d="+q9d+"&q10d="+q10d+"&q1e="+q1e+"&q2e="+q2e+"&q3e="+q3e+"&q4e="+q4e+"&q5e="+q5e+"&q6e="+q6e+"&q7e="+q7e+"&q8e="+q8e+"&q9e="+q9e+"&q10e="+q10e+"&appName2="+appName2+"&url2="+hook2+"&appName3="+appName3+"&url3="+hook3+"&appName4="+appName4+"&url4="+hook4+"&appName5="+appName5+"&url5="+hook5;
+      }
+    </script>
+    </div>
+    <br/>
+    <br/>
+
+    <div class="footer" style="position: absolute; bottom: 0; width: 100%; height: 2.5rem; text-align: center;">
+      <p>Copyright modernapp 2020</p>
+    </div>
+  </body>
+</html>
